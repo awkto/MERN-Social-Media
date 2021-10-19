@@ -30,4 +30,4 @@ const PORT = process.env.PORT || 5000;
 //     .catch((error) => console.log(error.message));
 // mongoose.set('useFindAndModify', false);
 
-mongoose.connect(CONNECTION_URL).then(()=>{console.log(`Server running on port: ${PORT}`)})
+mongoose.connect(CONNECTION_URL).then(()=>app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
