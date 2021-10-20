@@ -13,13 +13,14 @@ import postRoutes from './routes/posts.js';
 
 const app = express();
 
-//related to Routes and posts
-app.use('/posts', postRoutes);
 
 //bodyParser deprecated but can still use methods
 app.use(bodyParser.json({limit: "30mb", extended: true }));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
+
+//related to Routes and posts
+app.use('/posts', postRoutes);
 
 const CONNECTION_URL = 'mongodb+srv://mernuser:nocurtains@cluster0.fs8yo.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 const PORT = process.env.PORT || 5000;
